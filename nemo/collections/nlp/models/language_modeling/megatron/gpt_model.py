@@ -165,6 +165,8 @@ class GPTModel(MegatronModule):
         reduce_amax=True,
         use_emha=False,
         use_flash_attention=False,
+        seq_len_interpolation_factor=None,
+        rotary_base=10000,
     ):
         super(GPTModel, self).__init__(share_token_embeddings=share_embeddings_and_output_weights)
 
@@ -247,6 +249,8 @@ class GPTModel(MegatronModule):
             reduce_amax=reduce_amax,
             use_emha=use_emha,
             use_flash_attention=use_flash_attention,
+            seq_len_interpolation_factor=seq_len_interpolation_factor,
+            rotary_base=rotary_base,
         )
 
         if self.share_embeddings_and_output_weights:

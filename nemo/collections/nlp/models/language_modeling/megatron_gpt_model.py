@@ -358,6 +358,8 @@ class MegatronGPTModel(MegatronBaseModel, TextGeneration):
             reduce_amax=self.cfg.get('reduce_amax', True),
             use_emha=self.cfg.get('use_emha', False),
             use_flash_attention=self.cfg.get('use_flash_attention', False),
+            seq_len_interpolation_factor=self.cfg.get('seq_len_interpolation_factor', None),
+            rotary_base=self.cfg.get('rotary_base', 10000),
             megatron_legacy=self.cfg.get('megatron_legacy', False),
         )
 
